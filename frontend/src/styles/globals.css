@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos del fondo sólido */
+.solid-bg {
+  background: #F2F2F2;
+  min-height: 100vh;
+  padding: 2rem;
+  color: #0D0D0D;
+}
+
+/* Estilos de fondo de la barra de navegación */
+.bg-header-bg-color {
+  background-color: #0B0C0D;
+  /* Color de fondo de la barra de navegación */
+}
+
+/* Estilos del texto en la barra de navegación */
+.text-header-color {
+  color: #F2F2F2;
+  /* Color del texto en la barra de navegación */
+}
+
+/* Estilos adicionales para los textos específicos */
+.primary-text {
+  color: #F21616;
+}
+
+.secondary-text {
+  color: #F2F2F2;
+}
+
+.nav-text {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.nav-text-body {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+/* Estilos generales para el contenedor de la tarjeta de evento */
+.event-card {
+  border: 1px solid #ddd;
+  /* Borde de 1px sólido y de color gris claro */
+  padding: 20px;
+  /* Espaciado interno de 20px en todos los lados */
+  border-radius: 8px;
+  /* Bordes redondeados con un radio de 8px */
+  background-color: #f9f9f9;
+  /* Color de fondo gris muy claro para la tarjeta */
+}
+
+/* Estilos para el título (h2) dentro de la tarjeta de evento */
+.event-card-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+
+}
+
+/* Estilos para los botones dentro de la tarjeta de evento */
+.event-card-button {
+  margin-right: 10px;
+  /* Margen derecho de 10px para separar los botones entre sí */
+}
