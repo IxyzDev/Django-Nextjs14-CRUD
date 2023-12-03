@@ -3,6 +3,7 @@
 ## Introducción
 
 ### Objetivo del Desafío
+
 Desarrollar una aplicación de registro y visualización de eventos. Este desafío tiene como finalidad evaluar sus habilidades en desarrollo de software, especialmente en Python y Django para el backend, y en el frontend utilizando tecnologías como React o HTML/CSS/JS. Además, queremos ver sus habilidades en la organización del código, documentación y presentación oral a través de un video explicativo.
 
 ### Requisitos del Desafío

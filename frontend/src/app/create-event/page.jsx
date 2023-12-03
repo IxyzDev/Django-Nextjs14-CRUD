@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 
 import Form from "@/components/Form";
 
-const CreatePrompt = () => {
+const CreateEvent = () => {
   const router = useRouter();
 
   const [submitting, setIsSubmitting] = useState(false);
@@ -13,21 +13,37 @@ const CreatePrompt = () => {
     title: "",
     description: "",
     date: "",
+    time: "",
     location: "",
   });
 
-  const createPrompt = async (e) => {
+  const combinedDateTime = (fecha, hora) => {
+    let fechaHora = `${fecha}T${hora}:00Z`;
+    return fechaHora;
+  };
+
+  const createEvent = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-
     try {
-      // Asegúrate de que la estructura de los datos coincida con lo que espera tu API.
+      let combined = combinedDateTime(event.date, event.time);
+
+      const dataToSend = {
+        title: event.title,
+        description: event.description,
+        date: combined,
+        location: event.location,
+      };
+
+      // Imprimir los datos en la consola antes de enviarlos
+      console.log("Datos a enviar:", dataToSend);
+
       const response = await fetch("/api/evento/new", {
         method: "POST",
         body: JSON.stringify({
           title: event.title,
           description: event.description,
-          date: event.date,
+          date: combined,
           location: event.location,
         }),
         headers: {
@@ -51,9 +67,9 @@ const CreatePrompt = () => {
       event={event}
       setEvent={setEvent}
       submitting={submitting}
-      handleSubmit={createPrompt}
+      handleSubmit={createEvent}
     />
   );
 };
 
-export default CreatePrompt;
+export default CreateEvent;

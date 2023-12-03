@@ -5,10 +5,12 @@ const Nav = () => {
   return (
     <nav className="bg-header-bg-color p-4">
       <div className="container mx-auto flex justify-between items-center">
-        <h1 className="nav-text">
-          <span className="primary-text">Desafío</span>{" "}
-          <span className="secondary-text">Practicantes</span>
-        </h1>
+        <Link href="/">
+          <h1 className="nav-text">
+            <span className="primary-text">Desafío</span>{" "}
+            <span className="secondary-text">Practicantes</span>
+          </h1>
+        </Link>
         <Link href="/create-event">
           <div className="flex items-center cursor-pointer">
             <IoCreate className="text-header-color text-4xl" />

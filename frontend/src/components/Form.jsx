@@ -1,45 +1,11 @@
 const Form = ({ type, event, setEvent, submitting, handleSubmit }) => {
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setEvent({ ...event, [name]: value });
-  };
-
-  // Función para manejar los cambios en los inputs de fecha y hora
-  const handleDateTimeChange = (fieldName, value) => {
-    // Si el campo es "date", realiza la validación de fecha
-    if (fieldName === "date") {
-      const dateRegex = /^\d{4}-\d{2}-\d{2}$/; // Formato esperado: YYYY-MM-DD
-
-      if (dateRegex.test(value)) {
-        // La fecha ingresada es válida, actualiza el estado directamente
-        setEvent({
-          ...event,
-          [fieldName]: value,
-          dateTime: `${value}T${event.time}.000Z`, // Actualiza la fecha en dateTime
-        });
-      } else {
-        // La fecha ingresada no es válida, muestra un mensaje de error o realiza alguna acción
-        console.error("Fecha no válida. Utilice el formato YYYY-MM-DD.");
-      }
-    } else if (fieldName === "time") {
-      // Si el campo es "time", actualiza el estado directamente
-      setEvent({
-        ...event,
-        [fieldName]: value,
-        dateTime: `${event.date}T${value}.000Z`, // Actualiza la hora en dateTime
-      });
-    } else {
-      // Para otros campos que no sean fecha o hora, actualiza el estado directamente
-      setEvent({ ...event, [fieldName]: value });
-    }
-  };
-
   return (
     <section>
       <form
         onSubmit={handleSubmit}
-        className="max-w-lg mx-auto my-8 p-6 rounded shadow-lg"
+        className="max-w-lg mx-auto my-16 p-6 rounded shadow-lg"
       >
+        {/* Título */}
         <div className="mb-4">
           <label
             htmlFor="title"
@@ -48,13 +14,15 @@ const Form = ({ type, event, setEvent, submitting, handleSubmit }) => {
             Título:
           </label>
           <input
-            type="text"
             id="title"
-            name="title"
+            value={event.title}
+            onChange={(e) => setEvent({ ...event, title: e.target.value })}
+            required
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           />
         </div>
 
+        {/* Descripción */}
         <div className="mb-4">
           <label
             htmlFor="description"
@@ -64,45 +32,52 @@ const Form = ({ type, event, setEvent, submitting, handleSubmit }) => {
           </label>
           <textarea
             id="description"
-            name="description"
-            className="resize-none h-32 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+            value={event.description}
+            onChange={(e) =>
+              setEvent({ ...event, description: e.target.value })
+            }
+            required
+            className="resize-none h-32 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           ></textarea>
         </div>
 
-        {/* Fecha */}
-        <div className="mb-4">
-          <label
-            htmlFor="date"
-            className="block text-gray-700 text-sm font-bold mb-2"
-          >
-            Fecha:
-          </label>
-          <input
-            type="date"
-            id="date"
-            name="date"
-            value={event.date}
-            onChange={(e) => handleDateTimeChange("date", e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          />
-        </div>
+        {/* Contenedor principal */}
+        <div className="mb-4 flex">
+          {/* Fecha */}
+          <div className="mr-2 flex-1">
+            <label
+              htmlFor="date"
+              className="block text-gray-700 text-sm font-bold mb-2"
+            >
+              Fecha:
+            </label>
+            <input
+              id="date"
+              type="date"
+              value={event.date}
+              onChange={(e) => setEvent({ ...event, date: e.target.value })}
+              required
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div>
 
-        {/* Hora */}
-        <div className="mb-4">
-          <label
-            htmlFor="time"
-            className="block text-gray-700 text-sm font-bold mb-2"
-          >
-            Hora:
-          </label>
-          <input
-            type="time"
-            id="time"
-            name="time"
-            value={event.time}
-            onChange={(e) => handleDateTimeChange("time", e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          />
+          {/* Hora */}
+          <div className="flex-1">
+            <label
+              htmlFor="time"
+              className="block text-gray-700 text-sm font-bold mb-2"
+            >
+              Hora:
+            </label>
+            <input
+              id="time"
+              type="time"
+              value={event.time}
+              onChange={(e) => setEvent({ ...event, time: e.target.value })}
+              required
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div>
         </div>
 
         <div className="mb-6">
@@ -113,18 +88,20 @@ const Form = ({ type, event, setEvent, submitting, handleSubmit }) => {
             Ubicación:
           </label>
           <input
-            type="text"
             id="location"
-            name="location"
+            value={event.location}
+            onChange={(e) => setEvent({ ...event, location: e.target.value })}
+            required
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           />
         </div>
 
         <button
           type="submit"
+          disabled={submitting}
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         >
-          Enviar
+          {submitting ? `${type}...` : type}
         </button>
       </form>
     </section>
