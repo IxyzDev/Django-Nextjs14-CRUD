@@ -124,3 +124,11 @@
   background-color: #c82333;
   /* Color de fondo más oscuro al pasar el mouse */
 }
+
+/* Clase para botones con un ancho fijo */
+.btn-fixed-width {
+  width: 80px;
+  /* Ancho fijo para los botones */
+}
+
+/* Agrega aquí más estilos personalizados si es necesario */

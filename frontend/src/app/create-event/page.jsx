@@ -35,9 +35,6 @@ const CreateEvent = () => {
         location: event.location,
       };
 
-      // Imprimir los datos en la consola antes de enviarlos
-      console.log("Datos a enviar:", dataToSend);
-
       const response = await fetch("/api/evento/new", {
         method: "POST",
         body: JSON.stringify({
