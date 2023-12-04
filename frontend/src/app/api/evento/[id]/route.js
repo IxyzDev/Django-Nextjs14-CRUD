@@ -1,18 +1,23 @@
-// import Prompt from "@models/prompt";
-// import { connectToDatabase } from "@utils/database";
+import axios from "axios";
 
-// export const GET = async (request, { params }) => {
-//   try {
-//     await connectToDatabase();
+export const GET = async (req, { params }) => {
+  try {
+    const { data } = await axios.get(
+      `http://127.0.0.1:8000/eventApp/api/events/${params.id}`,
+      {
+        headers: {
+          "X-CSRFToken": process.env.CSRF_TOKEN, // Accede a la variable de entorno aquí
+        },
+      }
+    );
 
-//     const prompt = await Prompt.findById(params.id).populate("creator");
-//     if (!prompt) return new Response("Prompt Not Found", { status: 404 });
+    //console.log(data);
 
-//     return new Response(JSON.stringify(prompt), { status: 200 });
-//   } catch (error) {
-//     return new Response("Internal Server Error", { status: 500 });
-//   }
-// };
+    return new Response(JSON.stringify(data), { status: 200 });
+  } catch (error) {
+    return new Response(error, { status: 500 });
+  }
+};
 
 // export const PATCH = async (request, { params }) => {
 //   const { prompt, tag } = await request.json();

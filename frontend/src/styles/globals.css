@@ -41,27 +41,86 @@
   font-weight: 400;
 }
 
-/* Estilos generales para el contenedor de la tarjeta de evento */
+/* Estilo para el contenedor del evento */
 .event-card {
+  background-color: #fff;
+  /* Fondo blanco */
   border: 1px solid #ddd;
-  /* Borde de 1px sólido y de color gris claro */
-  padding: 20px;
-  /* Espaciado interno de 20px en todos los lados */
+  /* Borde delgado con sombra */
   border-radius: 8px;
-  /* Bordes redondeados con un radio de 8px */
-  background-color: #f9f9f9;
-  /* Color de fondo gris muy claro para la tarjeta */
+  /* Bordes redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Sombra suave */
+  padding: 20px;
+  /* Espaciado interno */
+  margin: 10px 0;
+  /* Espaciado externo superior e inferior */
+  cursor: pointer;
+  /* Cambio de cursor al pasar el mouse */
+  transition: box-shadow 0.3s ease;
+  /* Transición suave de sombra */
 }
 
-/* Estilos para el título (h2) dentro de la tarjeta de evento */
+/* Estilo al pasar el mouse sobre el contenedor del evento */
+.event-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Sombra más pronunciada al pasar el mouse */
+}
+
+/* Estilo para el título del evento */
 .event-card-title {
-  font-size: 1.4rem;
-  font-weight: 600;
-
+  color: #333;
+  /* Color del texto del título */
+  font-size: 1.4em;
+  /* Tamaño del texto del título */
+  margin-bottom: 10px;
+  /* Espaciado inferior */
 }
 
-/* Estilos para los botones dentro de la tarjeta de evento */
-.event-card-button {
+/* Estilo para el párrafo de descripción del evento */
+.event-card p {
+  color: #666;
+  /* Color del texto de descripción */
+  line-height: 1.5;
+  /* Espaciado entre líneas */
+  margin-bottom: 10px;
+  /* Espaciado inferior */
+}
+
+/* Estilo para los botones dentro del evento */
+.event-card button {
+  background-color: #007bff;
+  /* Color de fondo azul */
+  border: none;
+  /* Sin borde */
+  border-radius: 5px;
+  /* Bordes redondeados */
+  color: white;
+  /* Color del texto blanco */
+  padding: 10px 15px;
+  /* Espaciado interno */
   margin-right: 10px;
-  /* Margen derecho de 10px para separar los botones entre sí */
+  /* Margen derecho para separar botones */
+  cursor: pointer;
+  /* Cambio de cursor al pasar el mouse */
+  transition: background-color 0.3s ease;
+  /* Transición suave del color de fondo */
+}
+
+/* Estilo al pasar el mouse sobre los botones */
+.event-card button:hover {
+  background-color: #0056b3;
+  /* Color de fondo más oscuro al pasar el mouse */
+}
+
+/* Estilo para el último botón dentro del evento (Eliminar) */
+.event-card button:last-child {
+  background-color: #dc3545;
+  /* Color de fondo rojo */
+}
+
+/* Estilo al pasar el mouse sobre el último botón (Eliminar) */
+.event-card button:last-child:hover {
+  background-color: #c82333;
+  /* Color de fondo más oscuro al pasar el mouse */
 }

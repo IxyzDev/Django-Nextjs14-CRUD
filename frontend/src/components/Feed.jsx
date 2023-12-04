@@ -21,16 +21,6 @@ const Feed = () => {
 
   return (
     <div>
-      {/* <ul>
-        {allEventos.map((evento) => (
-          <li key={evento.id}>
-            <h2>{evento.title}</h2>
-            <p>{evento.description}</p>
-            <p>Fecha: {evento.date}</p>
-            <p>Ubicación: {evento.location}</p>
-          </li>
-        ))}
-      </ul> */}
       <EventCardList data={allEventos} />
     </div>
   );
