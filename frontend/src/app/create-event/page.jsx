@@ -22,6 +22,10 @@ const CreateEvent = () => {
     return fechaHora;
   };
 
+  const handleBack = () => {
+    router.back();
+  };
+
   const createEvent = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -59,13 +63,23 @@ const CreateEvent = () => {
   };
 
   return (
-    <Form
-      type="Crear"
-      event={event}
-      setEvent={setEvent}
-      submitting={submitting}
-      handleSubmit={createEvent}
-    />
+    <div className="container mx-auto p-4">
+      <div className="mb-4">
+        <button
+          onClick={handleBack}
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Retroceder
+        </button>
+      </div>
+      <Form
+        type="Crear"
+        event={event}
+        setEvent={setEvent}
+        submitting={submitting}
+        handleSubmit={createEvent}
+      />
+    </div>
   );
 };
 

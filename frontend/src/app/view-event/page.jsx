@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
+import CardDetails from "@/components/EventCardDetails";
+
 const EventDetailsPage = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -40,6 +42,10 @@ const EventDetailsPage = () => {
       });
   };
 
+  const handleBack = () => {
+    router.back();
+  };
+
   if (!event)
     return (
       <div className="flex justify-center items-center h-screen">
@@ -49,32 +55,19 @@ const EventDetailsPage = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <div className="bg-white shadow-md rounded-lg overflow-hidden">
-        <div className="p-4">
-          <div className="flex justify-between">
-            <h2 className="text-xl font-bold text-gray-700">{event.title}</h2>
-            <div className="flex space-x-2">
-              <button
-                className="btn-fixed-width bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-2 rounded text-sm" // Cambiado de text-xs a text-sm
-                onClick={handleDelete}
-              >
-                Eliminar
-              </button>
-              <button
-                className="btn-fixed-width bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded text-sm" // Cambiado de text-xs a text-sm
-                onClick={handleEdit}
-              >
-                Editar
-              </button>
-            </div>
-          </div>
-          <p className="text-gray-700 text-base mt-2">{event.description}</p>
-          <p className="text-gray-600">
-            Fecha: {new Date(event.date).toLocaleString()}
-          </p>
-          <p className="text-gray-600">Ubicación: {event.location}</p>
-        </div>
+      <div className="mb-4">
+        <button
+          onClick={handleBack}
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Retroceder
+        </button>
       </div>
+      <CardDetails
+        event={event}
+        handleEdit={handleEdit}
+        handleDelete={handleDelete}
+      />
     </div>
   );
 };
