@@ -1,10 +1,10 @@
 # Desafío de Desarrollo de Blacknexus
 
-### Objetivo del Desafío
+## Objetivo del Desafío
 
 Desarrollar una aplicación de registro y visualización de eventos. Este desafío tiene como finalidad evaluar sus habilidades en desarrollo de software, especialmente en Python y Django para el backend, y en el frontend utilizando tecnologías como React o HTML/CSS/JS. Además, queremos ver sus habilidades en la organización del código, documentación y presentación oral a través de un video explicativo.
 
-### Requisitos del Desafío
+## Requisitos del Desafío
 
 1. **Backend (Django):**
    - Modelo de datos para "Evento" con campos como título, descripción, fecha y ubicación.
@@ -20,7 +20,7 @@ Desarrollar una aplicación de registro y visualización de eventos. Este desaf�
    - README con instrucciones de instalación y ejecución.
    - Video explicativo del proyecto y decisiones de diseño.
 
-### Instrucciónes de Instalación y Ejecución
+## Instrucciónes de Instalación y Ejecución
 
 Para instalar y ejecutar un proyecto que utiliza Django para el backend y Next.js 14 para el frontend, primero debes asegurarte de tener instalados los siguientes requisitos en tu sistema:
 
@@ -33,10 +33,10 @@ Para instalar y ejecutar un proyecto que utiliza Django para el backend y Next.j
 **Instrucciones para el Backend (Django):**
 
 1. **Clonar el repositorio:**
-   - Clona el repositorio de tu proyecto, que debe contener la carpeta del backend de Django.
+   - Al clonar el repositorio del proyecto, este debe contener la carpeta del backend de Django.
 
 2. **Crear un entorno virtual (opcional pero recomendado):**
-   - En la carpeta del backend, crea un entorno virtual (virtual environment) para aislar las dependencias de tu proyecto. Puedes hacerlo con el siguiente comando:
+   - En la carpeta del backend, crea un entorno virtual (virtual environment). Puedes hacerlo con el siguiente comando:
    
      ```
      python -m venv env
@@ -83,7 +83,7 @@ Para instalar y ejecutar un proyecto que utiliza Django para el backend y Next.j
 **Instrucciones para el Frontend (Next.js 14):**
 
 1. **Clonar el repositorio:**
-   - Clona el repositorio de tu proyecto, que debe contener la carpeta del frontend de Next.js.
+   - Al clonar el repositorio del proyecto, este debe contener la carpeta del frontend de Next.js.
 
 2. **Instalar las dependencias:**
    - Abre una terminal en la carpeta del frontend y ejecuta el siguiente comando para instalar las dependencias de Node.js:
