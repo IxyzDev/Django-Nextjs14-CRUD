@@ -102,7 +102,7 @@ const CreateEvent = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="solid-bg">
       <div className="mb-4">
         <button
           onClick={handleBack}

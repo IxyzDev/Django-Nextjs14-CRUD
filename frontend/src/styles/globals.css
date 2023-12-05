@@ -4,10 +4,20 @@
 
 /* Estilos del fondo sólido */
 .solid-bg {
-  background: #F2F2F2;
-  min-height: 100vh;
+  /* Fondo degradado */
+  background: linear-gradient(to bottom, #F2F2F2, #FFFFFF);
+  /* Cambia los colores si lo deseas */
+
+
+  /* Espaciado interno */
   padding: 2rem;
+
+  /* Color de texto */
   color: #0D0D0D;
+
+  /* Centrar contenido verticalmente */
+  display: flex;
+  flex-direction: column;
 }
 
 /* Estilos de fondo de la barra de navegación */

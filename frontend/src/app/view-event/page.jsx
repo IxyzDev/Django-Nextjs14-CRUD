@@ -54,11 +54,11 @@ const EventDetailsPage = () => {
     );
 
   return (
-    <div className="container mx-auto p-4">
+    <section className="solid-bg">
       <div className="mb-4">
         <button
           onClick={handleBack}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-auto"
         >
           Retroceder
         </button>
@@ -68,7 +68,7 @@ const EventDetailsPage = () => {
         handleEdit={handleEdit}
         handleDelete={handleDelete}
       />
-    </div>
+    </section>
   );
 };
 

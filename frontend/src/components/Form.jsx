@@ -3,7 +3,7 @@ const Form = ({ type, event, setEvent, submitting, handleSubmit }) => {
     <section>
       <form
         onSubmit={handleSubmit}
-        className="max-w-lg mx-auto my-16 p-6 rounded shadow-lg"
+        className="max-w-lg mx-auto p-6 rounded shadow-lg bg-white"
       >
         {/* Título */}
         <div className="mb-4">
