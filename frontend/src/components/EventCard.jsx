@@ -2,7 +2,6 @@
 import { usePathname, useRouter } from "next/navigation";
 
 const EventCard = ({ event }) => {
-  const pathName = usePathname();
   const router = useRouter();
 
   const handleDetails = () => {
