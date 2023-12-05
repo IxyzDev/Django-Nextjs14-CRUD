@@ -10,15 +10,14 @@ Desarrollar una aplicación de registro y visualización de eventos. Este desaf�
    - Modelo de datos para "Evento" con campos como título, descripción, fecha y ubicación.
    - API RESTful para operaciones CRUD de eventos.
    - Pruebas unitarias para el API.
+
+2. **Frontend:**
    - Interfaz para agregar y mostrar eventos.
    - Interacción con el backend para operaciones CRUD.
 
-2. **Frontend:**
-   - Uso de Git con prácticas adecuadas de commits.
-
 3. **Control de Versiones:**
+4. - Uso de Git con prácticas adecuadas de commits.
    - README con instrucciones de instalación y ejecución.
-   - Video explicativo del proyecto y decisiones de diseño.
 
 ## Instrucciónes de Instalación y Ejecución
 
