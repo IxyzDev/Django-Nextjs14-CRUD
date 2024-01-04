@@ -16,7 +16,7 @@ Desarrollar una aplicación de registro y visualización de eventos. Este desaf�
    - Interacción con el backend para operaciones CRUD.
 
 3. **Control de Versiones:**
-4. - Uso de Git con prácticas adecuadas de commits.
+   - Uso de Git con prácticas adecuadas de commits.
    - README con instrucciones de instalación y ejecución.
 
 ## Instrucciónes de Instalación y Ejecución
